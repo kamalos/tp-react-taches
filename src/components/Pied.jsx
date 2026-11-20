@@ -1,8 +1,8 @@
-function Pied() {
+function Pied({ auteur }) {
     const ANNEE = new Date().getFullYear()
     return (
         <>
-            <footer className="pied">TP React - {ANNEE}</footer>
+            <footer className="pied">TP React - {auteur} - {ANNEE}</footer>
         </>
     )
 }

@@ -1,16 +1,16 @@
-function ListeTaches() {
+import Tache from "./Tache"
+
+function ListeTaches({ taches }) {
   return (
     <>
       <ul className="liste-taches">
-        <li className="tache">
-            <span className="titre">Comprendre les composants</span>
-        </li>
-        <li className="tache terminee">
-            <span className="titre">Comprendre les hooks</span>
-        </li>
-        <li className="tache">
-            <span className="titre">Comprendre les states</span>
-        </li>
+        {
+            taches.length > 0 ?
+            taches.map(
+                ({ id, titre, terminee }) => <Tache key={id} titre={titre} terminee={terminee} />
+            )
+            : <p className="vide">Aucune tâche à afficher.</p>
+        } 
       </ul>
     </>
   )
